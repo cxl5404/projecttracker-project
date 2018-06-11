@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+  <title>Project Tracker</title>
+  <style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  .form-signin {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin{
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 2px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark default-color">
+    <a class="navbar-brand" href="#">Project Tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+
+<form class="form-signin" method="post" action="{% url 'edit_project' project.id %}" enctype="multipart/form-data">
+  <br>
+  <br>
+  <h1 class="h3 mb-3 font-weight-normal" align="center">Updating project information</h1>
+  {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="customer_Name" value="{{ project.customer_Name }}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="phonenumber">Phone Number</label>
+      <input type="text" class="form-control" id="phonenumber" name="phone_Number" value="{{ project.phone_Number }}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" name="address" value="{{ project.address }}">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" name="city" id="inputCity" value="{{ project.city }}">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <input type="text" class="form-control" name="state" id="inputState" value="{{ project.state }}">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" name="zip_Code" id="inputZip" value="{{ project.zip_Code }}">
+    </div>
+  </div>
+
+  <p align="center" style="color:red">0: "No Included" | 1: "Working on It" | >1: "Under Review"</p>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="zoning">Zoning Permit Number</label>
+      <input type="number" class="form-control" id="zoning" name="zoning_Permit_Num" value="{{ project.zoning_Permit_Num }}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="ZP_Status">Zoning Pemit Status</label>
+      <input type="number" class="form-control" id="ZP_Status" name="ZP_Status" value="{{ project.ZP_Status }}">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="sign_Permit_Num">Sign Permit Number</label>
+      <input type="number" class="form-control" id="sign_Permit_Num" name="sign_Permit_Num" value="{{ project.sign_Permit_Num }}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="SP_Status">Sign Pemit Status</label>
+      <input type="number" class="form-control" id="SP_Status" name="SP_Status" value="{{ project.SP_Status}}">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="building_Permit_Num">Building Permit Number</label>
+      <input type="number" class="form-control" id="building_Permit_Num" name="building_Permit_Num" value="{{ project.building_Permit_Num }}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="BP_Status">Building Permit Status</label>
+      <input type="number" class="form-control" id="BP_Status" name="BP_Status" value="{{ project.BP_Status }}">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="plumbing_Permit_Num">Plumibing Permit Numeber</label>
+      <input type="number" class="form-control" id="plumbing_Permit_Num" name="plumbing_Permit_Num" value="{{ project.plumbing_Permit_Num}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="PP_Status">Plumbing Pemit Status</label>
+      <input type="number" class="form-control" id="PP_Status" name="PP_Status" value="{{ project.PP_Status }}">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="electric">Electrical Permit</label>
+      <input type="number" class="form-control" id="electric" name="electric_Permit_Num" value="{{ project.electric_Permit_Num }}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="EP_Status">Electrical Pemit Status</label>
+      <input type="number" class="form-control" id="EP_Status" name="EP_Status" value="{{ project.EP_Status }}">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="mechanical_Permit_Num">Mechanical Permit Number</label>
+      <input type="number" class="form-control" id="mechanical_Permit_Num" name="mechanical_Permit_Num" value="{{ project.mechanical_Permit_Num }}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="MP_Status">Mechanical Pemit Status</label>
+      <input type="number" class="form-control" id="MP_Status" name="MP_Status" value="{{ project.MP_Status }}">
+    </div>
+  </div>
+
+  <div class="text-center"><a href="{% url  'home' %}"><i class="fa fa-times fa-lg" aria-hidden="true" style="color:red;"></i>&nbsp;&nbsp;</a> <button type="submit" class="btn default-color">Update</button></div>
+</form>
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+</body>
+</html>
