@@ -22,7 +22,7 @@
 
   .form-signin {
     width: 100%;
-    max-width: 550px;
+    max-width: 750px;
     padding: 15px;
     margin: 0 auto;
   }
@@ -84,71 +84,100 @@
     </div>
   </div>
 
-  <p align="center" style="color:red">0: "No Included" | 1: "Working on It" | >1: "Under Review"</p>
+  <p align="center" style="color:red">Permit #/Plan: 0="No Included" | 1="Working on It"| >1: "Under Review"</p>
+  <p align="center" style="color:red">Status: 0="Under Review" | 1="Approved"</p>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="zoning">Zoning Permit Number</label>
       <input type="number" class="form-control" id="zoning" name="zoning_Permit_Num" value="{{ project.zoning_Permit_Num }}">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="ZP_Status">Zoning Pemit Status</label>
-      <input type="number" class="form-control" id="ZP_Status" name="ZP_Status" value="{{ project.ZP_Status }}">
+      <input type="number" class="form-control" id="ZP_Status" name="ZP_Status" value="{{ project.ZP_Status }}" min="0" max="1" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="zplan">Zoning Plan</label>
+      <input type="number" class="form-control" id="zplan" name="zplan" value="{{ project.Zoning_Plan }}" min="0" max="1" required>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="sign_Permit_Num">Sign Permit Number</label>
       <input type="number" class="form-control" id="sign_Permit_Num" name="sign_Permit_Num" value="{{ project.sign_Permit_Num }}">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="SP_Status">Sign Pemit Status</label>
-      <input type="number" class="form-control" id="SP_Status" name="SP_Status" value="{{ project.SP_Status}}">
+      <input type="number" class="form-control" id="SP_Status" name="SP_Status" value="{{ project.SP_Status}}" min="0" max="1" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="SP_Status">Sign Plan</label>
+      <input type="number" class="form-control" id="splan" name="splan" value="{{ project.Sign_Plan }}" min="0" max="1" required>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-3">
       <label for="building_Permit_Num">Building Permit Number</label>
       <input type="number" class="form-control" id="building_Permit_Num" name="building_Permit_Num" value="{{ project.building_Permit_Num }}">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-3">
       <label for="BP_Status">Building Permit Status</label>
-      <input type="number" class="form-control" id="BP_Status" name="BP_Status" value="{{ project.BP_Status }}">
+      <input type="number" class="form-control" id="BP_Status" name="BP_Status" value="{{ project.BP_Status }}" min="0" max="1" required>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="bplan">Building Plan</label>
+      <input type="number" class="form-control" id="bplan" name="bplan" value="{{ project.Building_Plan }}" min="0" max="1" required>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="ctime">Conformation Time</label>
+      <input type="text" class="form-control" id="ctime" name="ctime" value="{{ project.BP_Confirmation_Time }}">
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="plumbing_Permit_Num">Plumibing Permit Numeber</label>
+    <div class="form-group col-md-4">
+      <label for="plumbing_Permit_Num">Plumibing Permit Num.</label>
       <input type="number" class="form-control" id="plumbing_Permit_Num" name="plumbing_Permit_Num" value="{{ project.plumbing_Permit_Num}}">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="PP_Status">Plumbing Pemit Status</label>
-      <input type="number" class="form-control" id="PP_Status" name="PP_Status" value="{{ project.PP_Status }}">
+      <input type="number" class="form-control" id="PP_Status" name="PP_Status" value="{{ project.PP_Status }}" min="0" max="1" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="pplan">Plumbing Plan</label>
+      <input type="number" class="form-control" id="pplan" name="pplan" value="{{ project.Plumbing_Plan }}" min="0" max="1" required>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="electric">Electrical Permit</label>
       <input type="number" class="form-control" id="electric" name="electric_Permit_Num" value="{{ project.electric_Permit_Num }}">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="EP_Status">Electrical Pemit Status</label>
-      <input type="number" class="form-control" id="EP_Status" name="EP_Status" value="{{ project.EP_Status }}">
+      <input type="number" class="form-control" id="EP_Status" name="EP_Status" value="{{ project.EP_Status }}" min="0" max="1" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="eplan">Electrical Plan</label>
+      <input type="number" class="form-control" id="eplan" name="eplan" value="{{ project.Electric_Plan }}" min="0" max="1" required>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="mechanical_Permit_Num">Mechanical Permit Number</label>
+    <div class="form-group col-md-4">
+      <label for="mechanical_Permit_Num">Mechanical Permit Num.</label>
       <input type="number" class="form-control" id="mechanical_Permit_Num" name="mechanical_Permit_Num" value="{{ project.mechanical_Permit_Num }}">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="MP_Status">Mechanical Pemit Status</label>
-      <input type="number" class="form-control" id="MP_Status" name="MP_Status" value="{{ project.MP_Status }}">
+      <input type="number" class="form-control" id="MP_Status" name="MP_Status" value="{{ project.MP_Status }}" min="0" max="1" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="mplan">Mechanical Plan</label>
+      <input type="number" class="form-control" id="mplan" name="mplan" value="{{ project.Mechanical_Plan }}" min="0" max="1" required>
     </div>
   </div>
 

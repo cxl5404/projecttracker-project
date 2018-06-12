@@ -25,7 +25,7 @@ SECRET_KEY = '+vp#@mnj+2)3@*$cmr9(va2bec1!ahf+#7gm6g7a3sc#kct3*r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,14 +77,20 @@ WSGI_APPLICATION = 'projecttracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projecttrackerdb',
-        'USER':'postgres',
-        'PASSWORD':'django1234',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
+
+#DATABASES = {
+ #   'default': {
+   #     'NAME': 'projecttrackerdb',
+    #    'USER':'postgres',
+     #   'PASSWORD':'django1234',
+      #  'HOST':'localhost',
+       # 'PORT':'5432',
+    #}
+#}
 
 
 # Password validation

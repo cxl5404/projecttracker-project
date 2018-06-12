@@ -10,18 +10,32 @@ class Project(models.Model):
      state = models.CharField(max_length=255)
      zip_Code = models.CharField(max_length=255)
      pub_date = models.DateTimeField()
+
      building_Permit_Num = models.IntegerField(default=0)
      BP_Status = models.IntegerField(default=0)
+     Building_Plan = models.IntegerField(default=0)
+     BP_Confirmation_Time = models.CharField(max_length=255, default="00/00/2018")
+
+
      plumbing_Permit_Num = models.IntegerField(default=0)
      PP_Status = models.IntegerField(default=0)
+     Plumbing_Plan = models.IntegerField(default=0)
+
      electric_Permit_Num = models.IntegerField(default=0)
      EP_Status = models.IntegerField(default=0)
+     Electric_Plan = models.IntegerField(default=0)
+
      zoning_Permit_Num = models.IntegerField(default=0)
      ZP_Status = models.IntegerField(default=0)
+     Zoning_Plan = models.IntegerField(default=0)
+
      mechanical_Permit_Num = models.IntegerField(default=0)
      MP_Status = models.IntegerField(default=0)
+     Mechanical_Plan = models.IntegerField(default=0)
+
      sign_Permit_Num = models.IntegerField(default=0)
      SP_Status = models.IntegerField(default=0)
+     Sign_Plan = models.IntegerField(default=0)
 
      def __str__(self):
          return self.address + " " + self.state
