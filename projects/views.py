@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-        projects = Project.objects.order_by("-pub_date")
+        projects = Project.objects.order_by("address")
         return render(request,'projects/projects_list.html',{'projects':projects})
 
 

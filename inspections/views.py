@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def inspections(request):
+	return render(request,'inspections/inspections.html')

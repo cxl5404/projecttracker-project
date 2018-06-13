@@ -13,7 +13,7 @@
   <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
   <style>
-  .active{
+  .active1{
     background: rgba(0, 0, 0, 0.5);
   }
   </style>
@@ -34,7 +34,7 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Inspections</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active1">
         <a class="nav-link" href="{% url 'home' %}">Projects<span class="sr-only">(current)</span></a>
       </li>
       &nbsp;
@@ -88,7 +88,7 @@
     <!--Table head-->
     <thead>
       <tr>
-        <th>Date</th>
+        <!--<th>Date</th>-->
         <th class="th-lg"><i class="fa fa-map-marker fa-lg pr-2" aria-hidden="true"></i>Address</th>
         <th class="th-lg"><i class="fa fa-map-o fa-lg pr-2" aria-hidden="true"></i>Zoning</th>
         <th class="th-lg"><i class="fa fa-building fa-lg pr-2" aria-hidden="true"></i>Builiding</th>
@@ -105,7 +105,7 @@
     <tbody>
       {% for project in projects %}
       <tr>
-        <th scope="row">{{ project.pub_date_pretty }}</th>
+        <!--<th scope="row">{{ project.pub_date_pretty }}</th>-->
         <td ><a data-toggle="tooltip" data-placement="top" title="{{ project.customer_Name }}: {{ project.phone_Number }}">{{project.address}}, {{project.city}} {{project.state}} {{project.zip_Code}}</a></td>
 
         {% if project.zoning_Permit_Num == 0 %}
@@ -127,9 +127,9 @@
         {% elif project.building_Permit_Num == 1 and project.Building_Plan == 0  %}
         <td ><a data-toggle="tooltip" data-placement="bottom" title="Working on it. (Plan isn't required.)"><i class="fa fa-etsy fa-lg" aria-hidden="true"></i></a></td>
         {% elif project.building_Permit_Num > 1 and project.BP_Status == 0 %}
-        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.building_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
+        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.building_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.building_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
         {% else %}
-        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.building_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
+        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.building_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.building_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
         {% endif %}
 
         {% if project.plumbing_Permit_Num == 0 %}
@@ -139,9 +139,9 @@
         {% elif project.plumbing_Permit_Num == 1 and project.Plumbing_Plan == 0 %}
         <td><a data-toggle="tooltip" data-placement="bottom" title="Working on it. (Plan isn't required.)"><i class="fa fa-etsy fa-lg" aria-hidden="true"></i></a></td>
         {% elif project.plumbing_Permit_Num > 1 and project.PP_Status == 0 %}
-        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.plumbing_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
+        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.plumbing_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.plumbing_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
         {% else %}
-        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.plumbing_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
+        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.plumbing_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.plumbing_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
         {% endif %}
 
         {% if project.electric_Permit_Num == 0 %}
@@ -151,9 +151,9 @@
         {% elif project.electric_Permit_Num == 1 and project.Electric_Plan == 0 %}
         <td><a data-toggle="tooltip" data-placement="bottom" title="Working on it. (Plan isn't required.)"><i class="fa fa-etsy fa-lg" aria-hidden="true"></i></a></td>
         {% elif project.electric_Permit_Num > 1 and project.EP_Status == 0 %}
-        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.electric_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
+        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.electric_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.electric_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
         {% else %}
-        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.electric_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
+        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.electric_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.electric_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
         {% endif %}
 
         {% if project.mechanical_Permit_Num == 0 %}
@@ -163,9 +163,9 @@
         {% elif project.mechanical_Permit_Num == 1 and project.Mechanical_Plan == 0 %}
         <td><a data-toggle="tooltip" data-placement="bottom" title="Working on it. (Plan isn't required.)"><i class="fa fa-etsy fa-lg" aria-hidden="true"></i></a></td>
         {% elif project.mechanical_Permit_Num > 1 and project.MP_Status == 0 %}
-        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.mechanical_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
+        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.mechanical_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.mechanical_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
         {% else %}
-        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.mechanical_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
+        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.mechanical_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.mechanical_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
         {% endif %}
 
         {% if project.sign_Permit_Num == 0 %}
@@ -175,9 +175,9 @@
         {% elif project.sign_Permit_Num == 1 and project.Sign_Plan == 0 %}
         <td><a data-toggle="tooltip" data-placement="bottom" title="Working on it. (Plan isn't required.)"><i class="fa fa-etsy fa-lg" aria-hidden="true"></i></a></td>
         {% elif project.sign_Permit_Num > 1 and project.SP_Status == 0 %}
-        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.sign_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
+        <td bgcolor="#ff4444"><a href="https://www.phila.gov/li-permit-tracker/?id={{project.sign_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Under Review | Permit#: {{project.sign_Permit_Num}}"><i class="fa fa-spinner fa-pulse fa-lg" aria-hidden="true" style="color:white;"></i></a></td>
         {% else %}
-        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.zoning_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.sign_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
+        <td><a href="https://www.phila.gov/li-permit-tracker/?id={{project.sign_Permit_Num}}" data-toggle="tooltip" data-placement="bottom" title="Approved | Permit#: {{project.sign_Permit_Num}}"><i class="fa fa-check-square-o fa-lg" aria-hidden="true" style="color:#2BBBAD;"></i></a></td>
         {% endif %}
 
         <td>
